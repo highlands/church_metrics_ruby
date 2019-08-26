@@ -10,7 +10,7 @@ The original API uses curl to get the requests. This gem allows you to use Ruby 
 
 First, add to your Gemfile:
 
-    gem 'church_metrics', :github => "johndavid400/church_metrics_ruby"
+    gem 'church_metrics', :github => "highlands/church_metrics_ruby"
 
 Then bundle
 
