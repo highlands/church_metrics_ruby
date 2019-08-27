@@ -1,18 +1,31 @@
 PATH
   remote: .
   specs:
-    church_metrics_ruby (0.0.1)
-      rest-client
+    church_metrics (0.0.3)
+      faraday
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
-    mime-types (2.0)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
+    coderay (1.1.2)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
+    method_source (0.9.2)
+    multipart-post (2.1.1)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  church_metrics_ruby!
+  church_metrics!
+  faraday
+  pry
+
+RUBY VERSION
+   ruby 2.6.3p62
+
+BUNDLED WITH
+   2.0.2

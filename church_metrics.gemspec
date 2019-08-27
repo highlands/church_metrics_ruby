@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "church_metrics"
-  s.version     = "0.0.2"
+  s.version     = "0.0.3"
   s.authors     = ["Digital Team"]
   s.email       = ["webadmin@churchofthehighlands.com"]
   s.homepage    = "https://github.com/highlands/church_metrics_ruby"
@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.files = Dir["{lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rest-client"
+  s.add_dependency "faraday"
 
 end

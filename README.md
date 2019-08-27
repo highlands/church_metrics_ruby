@@ -44,6 +44,17 @@ Start a rails console:
 
     rails c
 
+Or alternatively for local development: 
+    gem install faraday # Once
+
+    # rebuild the gem and reinstall
+    gem build church_metrics.gemspec 
+    gem install --local church_metrics-0.0.3.gem
+
+    Run irb from console
+    
+    require 'church_metrics'
+
 Verify api key:
 
     api = ChurchMetrics::API.new.key
@@ -62,8 +73,8 @@ Make a test call:
 
 * Campuses
 * Categories
-* Churches
 * Events
+* Organizations
 * Projections
 * Records
 * Regions
@@ -72,13 +83,15 @@ Make a test call:
 
 #### *all* and *find* are universal methods
 
-All resources (except Churches) have the "all" and "find" methods available:
+All resources (except Organizations) have the "all" and "find" methods available:
 
 The *all* method will return a paginated list of all instances of a resource. This result is paginated (default = 30 results), and you can specify the page number you want to view as well as the number of results per page. See the examples below.
 
 The *find* method requires the ID of the resource you are looking for.
 
 ### Examples:
+
+    ChurchMetrics::Categories.new.all
 
     ChurchMetrics::ServiceTimes.new.all
 
@@ -91,19 +104,18 @@ The *find* method requires the ID of the resource you are looking for.
     ChurchMetrics::Events.new.find(id)
 
 
-#### The churches resource has 2 methods: info and weekly_totals
+#### The organization resource has 2 methods: info and weekly_totals
 
 To get information about your church:
 
-    ChurchMetrics::Churches.new.info
+    ChurchMetrics::Organizations.new.info
 
 To get weekly totals data for a given category:
 
-    ChurchMetrics::Churches.new.weekly_totals(category_id, week={})
+    ChurchMetrics::Organizations.new.weekly_totals(category_id, week={})
 
 #### Additionally, the campuses resource has a weekly_totals method
 
     ChurchMetrics::Campuses.new.weekly_totals(category_id, week={})
-
 
 ### ...more to come
