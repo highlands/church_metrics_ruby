@@ -5,20 +5,5 @@ module ChurchMetrics
 
     # https://github.com/lifechurch/churchmetrics-api/blob/master/sections/records.md#get-records
 
-    def get_records
-    end
-
-    def get_record
-    end
-
-    def create_record
-    end
-
-    def edit_record
-    end
-
-    def delete_record
-    end
-
   end
 end

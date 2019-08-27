@@ -14,7 +14,6 @@ module ChurchMetrics
 
     def call_api
       @base_url = @base + @url
-      puts "Calling API: " + @base_url
       f = Faraday.get(@base_url, nil, @auth)
       @json = JSON.parse(f.body)
     end
