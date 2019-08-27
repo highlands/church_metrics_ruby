@@ -1,6 +1,8 @@
 module ChurchMetrics
   class API
-    require 'rest_client'
+    require 'faraday'
+    require 'active_support/all'
+    require 'active_support/core_ext/string/inflections'
 
     attr_reader :base, :key, :user, :url, :base_url, :klass
 
@@ -12,8 +14,8 @@ module ChurchMetrics
 
     def call_api
       @base_url = @base + @url
-      resp = RestClient.get @base_url, @auth
-      @json = JSON.parse(resp)
+      f = Faraday.get(@base_url, nil, @auth)
+      @json = JSON.parse(f.body)
     end
 
     def get_week(week)

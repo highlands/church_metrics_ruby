@@ -1,5 +1,5 @@
 module ChurchMetrics
-  class Churches < API
+  class Organizations < API
 
     def all
       @method = "all"
@@ -12,15 +12,14 @@ module ChurchMetrics
     end
 
     def info
-      @url = "churches/me.json"
+      @url = "organizations/me.json"
       call_api
     end
 
     def weekly_totals(category_id, week = {})
-      # TODO find out what format week_reference needs to be
       category = "?category_id=#{category_id}"
       week = week.present? ? "&week_reference=#{week}" : ""
-      @url = "churches/weekly_totals.json" + category + week
+      @url = "organizations/weekly_totals.json" + category + week
       call_api
     end
 

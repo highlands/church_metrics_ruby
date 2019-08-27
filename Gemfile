@@ -1,4 +1,7 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.6.3'
 
 # Declare your gem's dependencies in edmunds_ruby.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -15,3 +18,7 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'faraday'
+gem 'pry'
+
